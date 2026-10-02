@@ -152,7 +152,7 @@ function App() {
               and public GitHub evidence into one developer profile.
             </p>
             <button className="primary" onClick={connectWallet}>
-              {account ? "Refresh Wallet" : "Connect Wallet"}
+              {account ? "Refresh On-chain Profile" : "Connect Wallet"}
             </button>
           </div>
 
