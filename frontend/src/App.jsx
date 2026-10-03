@@ -148,7 +148,7 @@ function App() {
             <span className="eyebrow">ON-CHAIN DEVELOPER REPUTATION</span>
             <h1>Prove your Web3 skills with evidence.</h1>
             <p>
-              ChainProof combines wallet activity, verifiable achievements,
+              ChainProof combingit statuses wallet activity, verifiable achievements,
               and public GitHub evidence into one developer profile.
             </p>
             <button className="primary" onClick={connectWallet}>
@@ -228,18 +228,27 @@ function App() {
               <h2>GitHub analysis</h2>
             </div>
           </div>
+<form className="github-form" onSubmit={analyzeGithub}>
+  <input
+    type="text"
+    value={githubUsername}
+    onChange={(e) => setGithubUsername(e.target.value)}
+    placeholder="Enter GitHub username"
+  />
 
-          <form className="github-form" onSubmit={analyzeGithub}>
-            <input
-              value={githubUsername}
-              onChange={(e) => setGithubUsername(e.target.value)}
-              placeholder="Enter GitHub username"
-            />
-            <button className="primary" disabled={loading}>
-              {loading ? "Analyzing..." : "Analyze"}
-            </button>
-          </form>
+  <a
+    href={`https://github.com/${githubUsername}`}
+    target="_blank"
+    rel="noreferrer"
+    className="github-profile-link"
+  >
+    View GitHub Profile →
+  </a>
 
+  <button className="primary" disabled={loading}>
+    {loading ? "Analyzing..." : "Analyze"}
+  </button>
+</form>
           {github && (
             <div className="github-card">
               <div>
