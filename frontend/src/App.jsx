@@ -137,9 +137,24 @@ function App() {
           <span>ChainProof</span>
         </div>
 
-        <button className="connect-btn" onClick={connectWallet}>
-          {account ? shortAddress(account) : "Connect Wallet"}
-        </button>
+        <div className="nav-actions">
+  {account && (
+    <button
+      className="share-btn"
+      onClick={async () => {
+        await navigator.clipboard.writeText(window.location.href);
+        setMessage("Profile link copied!");
+        setTimeout(() => setMessage(""), 2000);
+      }}
+    >
+      Share Profile
+    </button>
+  )}
+
+  <button className="connect-btn" onClick={connectWallet}>
+    {account ? shortAddress(account) : "Connect Wallet"}
+  </button>
+</div>
       </header>
 
       <main>

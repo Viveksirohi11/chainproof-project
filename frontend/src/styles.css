@@ -63,12 +63,24 @@ button {
   font-weight: 900;
 }
 
-.connect-btn,
-.primary {
-  border: 0;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share-btn {
+  border: 1px solid #273244;
   border-radius: 10px;
-  padding: 11px 17px;
+  padding: 10px 15px;
   font-weight: 700;
+  background: #0d131d;
+  color: #e8edf7;
+}
+
+.share-btn:hover {
+  background: #151d2a;
+  border-color: #3a4960;
 }
 
 .connect-btn {
